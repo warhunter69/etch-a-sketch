@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
   });
-var color = "black"
+var color = "black";
 function changeColor(divId){
-    let div = document.querySelector('#divId');
-    
-    console.log(divId);
+
+    let div = document.querySelector(`#${divId}`);
+    console.log(div);
     div.style.backgroundColor = color;
 
 }

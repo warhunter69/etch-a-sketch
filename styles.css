@@ -1,0 +1,14 @@
+.block{
+    margin: 0px;
+    padding: 20px;
+    background-color: wheat;
+    
+    
+}
+
+#canvas{
+    display:inline-grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
+
+   
+}

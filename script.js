@@ -6,8 +6,17 @@ document.addEventListener('DOMContentLoaded', function() {
         let div = document.createElement("DIV");
         div.id = `div${i}`;
         div.className ='block';
-        div.innerHTML = ""
+        div.innerHTML = "";
+        div.addEventListener("mouseover", ()=>changeColor(`div${i}`));
         canvas.append(div);
     }
 
   });
+var color = "black"
+function changeColor(divId){
+    let div = document.querySelector('#divId');
+    
+    console.log(divId);
+    div.style.backgroundColor = color;
+
+}

@@ -34,9 +34,11 @@ function clearCanvas(){
 
 function resize(){
     let canvas = document.querySelector('#canvas');
-    size = parseint(document.querySelector('#size').value);
+    size = parseInt(document.querySelector('#size').value);
     console.log(size)
     canvas.innerHTML ="";
+    canvas.style.gridTemplateColumns = `repeat(${size},1fr)`
+    canvas.style.gridTemplateRows = `repeat(${size},1fr)`
     for (let i = 0; i < size*size; i++){
         let div = document.createElement("DIV");
         div.id = `div${i}`;

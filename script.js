@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
     let canvas = document.querySelector('#canvas');
-    for (let i = 0; i < 256; i++){
+    for (let i = 0; i < size*size; i++){
         let div = document.createElement("DIV");
         div.id = `div${i}`;
         div.className ='block';
@@ -10,13 +10,39 @@ document.addEventListener('DOMContentLoaded', function() {
         div.addEventListener("mouseover", ()=>changeColor(`div${i}`));
         canvas.append(div);
     }
-
+   
+    document.querySelector('#clear').addEventListener('click', () => clearCanvas());
+    document.querySelector('#resize').addEventListener('click', () => resize());
   });
 var color = "black";
+var resetColor = "white"
 function changeColor(divId){
 
     let div = document.querySelector(`#${divId}`);
-    console.log(div);
+    //console.log(div);
     div.style.backgroundColor = color;
+
+}
+function clearCanvas(){
+    let canvas = document.querySelector('#canvas');
+    let children =canvas.childNodes;
+    
+    for (let i=0;i<children.length;i++){
+        children[i].style.backgroundColor = resetColor;
+    }
+}
+
+function resize(){
+    let canvas = document.querySelector('#canvas');
+    value = document.querySelector('#size').value;
+    canvas.innerHTML ="";
+    for (let i = 0; i < size*size; i++){
+        let div = document.createElement("DIV");
+        div.id = `div${i}`;
+        div.className ='block';
+        div.innerHTML = "";
+        div.addEventListener("mouseover", ()=>changeColor(`div${i}`));
+        canvas.append(div);
+    }
 
 }

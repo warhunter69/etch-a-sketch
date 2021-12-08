@@ -1,6 +1,6 @@
 .block{
     margin: 0px;
-    padding: 20px;
+    padding: 0px;
     background-color: white;
     
     
@@ -8,7 +8,15 @@
 
 #canvas{
     display:inline-grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
-
-   
+    grid-template-columns: repeat(16,1fr);
+    grid-template-rows: repeat(16, 1fr);
+    border: 1px solid grey;
+    width: 500px;
+    height: 500px;
+    padding: 0px;
+}
+#y{
+    display:inline-grid;
+    display: flex;
+    flex-wrap: nowrap;
 }

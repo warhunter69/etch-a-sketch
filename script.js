@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    
+    let size = 16
     let canvas = document.querySelector('#canvas');
     for (let i = 0; i < size*size; i++){
         let div = document.createElement("DIV");
@@ -34,7 +34,8 @@ function clearCanvas(){
 
 function resize(){
     let canvas = document.querySelector('#canvas');
-    value = document.querySelector('#size').value;
+    size = parseint(document.querySelector('#size').value);
+    console.log(size)
     canvas.innerHTML ="";
     for (let i = 0; i < size*size; i++){
         let div = document.createElement("DIV");
